@@ -19,7 +19,7 @@ def login():
     if request.method == "POST":
         passw = request.form['pass']
         uname =  request.form['uname']
-        datav = mongo.db.personal_data.find_one({"uname":uname})
+        datav = None #mongo.db.personal_data.find_one({"uname":uname})
         if datav:
             passwv = datav['pass']
             session["uname"] = datav['uname']
