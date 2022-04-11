@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert {{category}}" role="alert">
+          {{message}}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+    <link rel="stylesheet" href="{{ url_for('loginbp.static' , filename='css/logins.css') }}">
+    <script type = text/javascript src="{{ url_for('loginbp.static' , filename='js/valid.js') }}"></script>
+    <h1>LOGIN PAGE</h1>
+</head>
+<body>
+    <header>
+        <h3 id="grey">TECH </h3><h3 id="red">M</h3>
+    </header>
+    <section>
+        <form id="login" name="login" method="POST" action="/login/" onsubmit =  "return Login()">
+            <div class="row">
+                <input type="textbox" placeholder="Username" name="uname" id="uname">
+                <input type="password" placeholder="Password" name="pass" id="pass"><br>
+                <input type="submit" value="Login">
+                <a href="#">user not registered, please sign up</a>
+            </div>
+        </form>
+    </section>
+    
+</body>
+</html>

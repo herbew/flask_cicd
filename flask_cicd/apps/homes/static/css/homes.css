@@ -1,0 +1,17 @@
+p {
+    display: inline;
+    font-weight: bold;
+    color: red;
+}
+
+h1{
+    align-content: center;
+    color: crimson;
+    margin-left: 42%;
+    margin-top: 10%;
+}
+
+.row {
+    align-content: center;
+    margin-left: 39%;
+   }
