@@ -1,3 +1,5 @@
+from flask_cicd.apps.homes.tests.controls import app
+
 
 def test_home_route(app, client):
     """ 
@@ -7,7 +9,7 @@ def test_home_route(app, client):
     """
     with app.test_client() as test_client:
         res = test_client.get('/home')
-        # assert res.status_code == 200
+        assert res.status_code == 200
 
 # def test_logout_route(app, client):
 #     """ 
