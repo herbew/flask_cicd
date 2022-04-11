@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, redirect, session
+from flask import Blueprint, render_template, flash, redirect, request, session
 
 loginbp = Blueprint(
         "loginbp", 
