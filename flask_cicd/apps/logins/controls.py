@@ -14,7 +14,7 @@ def login():
         return redirect('/home')
 
     if request.method == "GET":
-        return render_template('login.html')
+        return render_template('logins.html')
 
     if request.method == "POST":
         passw = request.form['pass']
