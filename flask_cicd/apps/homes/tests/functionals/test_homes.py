@@ -1,4 +1,4 @@
-from flask_cicd.apps.homes.tests.controls import app
+#from flask_cicd.apps.homes.tests.controls import app
 
 
 def test_home_route(app, client):
