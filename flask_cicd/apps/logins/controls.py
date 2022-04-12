@@ -5,9 +5,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import (login_user, 
                          login_required, logout_user, current_user)
 
-from run import db
-
-from flask_cicd.apps.logins.models.users import User
 from flask_cicd.apps.logins.forms.users import LoginForm, RegisterForm
 
 loginbp = Blueprint(
@@ -19,7 +16,7 @@ loginbp = Blueprint(
 
 @loginbp.route("/", methods=["GET","POST"])
 def login():
-
+    from flask_cicd.apps.logins.models.users import User
     form = LoginForm()
     
     if form.validate_on_submit():
@@ -42,6 +39,7 @@ def login():
     
 @loginbp.route('/signup', methods=['GET', 'POST'])
 def signup():
+    from run import db
     form = RegisterForm()
 
     if form.validate_on_submit():
