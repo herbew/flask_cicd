@@ -1,7 +1,8 @@
 
 from flask import Flask, render_template, request, flash, redirect, session
 from flask_bootstrap import Bootstrap
-
+from flask_login import LoginManager
+                         
 from flask_cicd.apps.homes.controls import homebp
 from flask_cicd.apps.logins.controls import loginbp
 
@@ -17,6 +18,15 @@ bootstrap = Bootstrap(app)
 
 app.register_blueprint(homebp, url_prefix="/home")
 app.register_blueprint(loginbp, url_prefix="/login")
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+
+@login_manager.user_loader
+def load_user(user_id):
+    from flask_cicd.apps.logins.models.users import User
+    return User.query.get(int(user_id))
 
 @app.route("/")
 def main():

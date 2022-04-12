@@ -2,18 +2,9 @@ from flask import Blueprint, render_template, flash, redirect, request, session
 
 from flask_sqlalchemy  import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import (LoginManager, UserMixin, login_user, 
+from flask_login import (login_user, 
                          login_required, logout_user, current_user)
 
-
-login_manager = LoginManager()
-login_manager.init_app(app)
-login_manager.login_view = 'login'
-
-@login_manager.user_loader
-def load_user(user_id):
-    from flask_cicd.apps.logins.models.users import User
-    return User.query.get(int(user_id))
 
 loginbp = Blueprint(
         "loginbp", 
