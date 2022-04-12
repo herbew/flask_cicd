@@ -19,3 +19,6 @@ Bootstrap-Flask==2.0.2 #https://pypi.org/project/Bootstrap-Flask/
 ##Successfully installed Bootstrap-Flask-2.0.2 WTForms-3.0.1
 
 Flask-WTF==1.0.1 #https://pypi.org/project/Flask-WTF/
+##Successfully installed Flask-WTF-1.0.1
+
+Flask-Login 0.6.0 #https://pypi.org/project/Flask-Login/
