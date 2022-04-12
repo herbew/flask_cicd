@@ -8,9 +8,6 @@ from flask_login import (LoginManager, UserMixin, login_user,
 from flask_cicd.apps.logins.models.users import User
 from flask_cicd.apps.logins.forms.users import LoginForm, RegisterForm
 
-from run import app 
-
-db = SQLAlchemy(app)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -51,6 +48,10 @@ def login():
     
 @loginbp.route('/signup', methods=['GET', 'POST'])
 def signup():
+    from run import app 
+
+    db = SQLAlchemy(app)
+
     form = RegisterForm()
 
     if form.validate_on_submit():
