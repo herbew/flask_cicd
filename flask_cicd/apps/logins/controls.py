@@ -34,7 +34,7 @@ def login():
         return redirect(url_for('signup'))
         #return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
 
-    return render_template('login.html', form=form)
+    return render_template('logins.html', form=form)
     
     
     
