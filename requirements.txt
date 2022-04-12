@@ -26,3 +26,5 @@ Flask-Login==0.6.0 #https://pypi.org/project/Flask-Login/
 
 Flask-Admin==1.6.0 #https://pypi.org/project/Flask-Admin/
 ##Successfully installed Flask-Admin-1.6.0
+
+email-validator==1.1.3 #https://pypi.org/project/email-validator/
