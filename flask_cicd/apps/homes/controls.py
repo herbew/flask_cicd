@@ -4,8 +4,8 @@ from flask import Blueprint, render_template, redirect, session
 homebp = Blueprint(
     "homebp",
     __name__, 
-    static_folder="static", 
-    template_folder="templates")
+    static_folder="../../static", #apps/homes/static
+    template_folder="../../templates") #apps/homes/templates
 
 
 @homebp.route("/")
