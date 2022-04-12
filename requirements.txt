@@ -16,3 +16,4 @@ Flask-Migrate==3.1.0
 ##  importlib-resources-5.6.0
 
 Bootstrap-Flask==2.0.2
+##Successfully installed Bootstrap-Flask-2.0.2 WTForms-3.0.1
