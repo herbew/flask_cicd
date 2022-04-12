@@ -1,5 +1,6 @@
 
 from flask import Flask, render_template, request, flash, redirect, session
+from flask_sqlalchemy  import SQLAlchemy
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
                          
@@ -14,6 +15,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///databases/db_flask_cicd.db'
 app.config['SECRET_KEY'] = "$HERBEWscKKwwqy#@!"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
 
+
+db = SQLAlchemy(app)
 bootstrap = Bootstrap(app)
 
 app.register_blueprint(homebp, url_prefix="/home")
