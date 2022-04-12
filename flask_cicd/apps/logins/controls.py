@@ -5,9 +5,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import (LoginManager, UserMixin, login_user, 
                          login_required, logout_user, current_user)
 
-from flask_cicd.apps.logins.models.users import User
-from flask_cicd.apps.logins.forms.users import LoginForm, RegisterForm
-
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -15,6 +12,7 @@ login_manager.login_view = 'login'
 
 @login_manager.user_loader
 def load_user(user_id):
+    from flask_cicd.apps.logins.models.users import User
     return User.query.get(int(user_id))
 
 loginbp = Blueprint(
@@ -26,6 +24,9 @@ loginbp = Blueprint(
 
 @loginbp.route("/", methods=["GET","POST"])
 def login():
+    from flask_cicd.apps.logins.models.users import User
+    from flask_cicd.apps.logins.forms.users import LoginForm, RegisterForm
+
     form = LoginForm()
     
     if form.validate_on_submit():
@@ -48,9 +49,8 @@ def login():
     
 @loginbp.route('/signup', methods=['GET', 'POST'])
 def signup():
-    from run import app 
-
-    db = SQLAlchemy(app)
+    from flask_cicd.apps.logins.models.users import User, db
+    from flask_cicd.apps.logins.forms.users import LoginForm, RegisterForm
 
     form = RegisterForm()
 
