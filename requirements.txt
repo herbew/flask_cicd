@@ -22,3 +22,6 @@ Flask-WTF==1.0.1 #https://pypi.org/project/Flask-WTF/
 ##Successfully installed Flask-WTF-1.0.1
 
 Flask-Login==0.6.0 #https://pypi.org/project/Flask-Login/
+##Successfully installed Flask-Login-0.6.0
+
+Flask-Admin==1.6.0 #https://pypi.org/project/Flask-Admin/
