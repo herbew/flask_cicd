@@ -3,14 +3,6 @@ from flask import Flask, render_template, request, flash, redirect, session
 from flask_sqlalchemy  import SQLAlchemy
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
-
-from flask_script import Manager,  Shell
-
-def shell_context():
-    import os, sys
-    return dict(app=app, os=os, sys=sys)
-
-
                          
 from flask_cicd.apps.homes.controls import homebp
 from flask_cicd.apps.logins.controls import loginbp
@@ -48,4 +40,3 @@ def main():
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5000, threaded=True)
-    manager.run()
