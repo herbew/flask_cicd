@@ -1,7 +1,7 @@
 
 from flask import Flask, render_template, request, flash, redirect, session
 from flask_sqlalchemy  import SQLAlchemy
-from flask_bootstrap import Bootstrap
+from flask_bootstrap import Bootstrap4
 from flask_login import LoginManager
                          
 from flask_cicd.apps.homes.controls import homebp
@@ -16,7 +16,7 @@ app.config['SECRET_KEY'] = "$HERBEWscKKwwqy#@!"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
 
 db = SQLAlchemy(app)
-bootstrap = Bootstrap(app)
+bootstrap = Bootstrap4(app)
 
 app.register_blueprint(homebp, url_prefix="/home")
 app.register_blueprint(loginbp, url_prefix="/login")
