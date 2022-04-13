@@ -20,7 +20,7 @@ loginbp = Blueprint(
 
 
 
-@loginbp.route("/", methods=["GET","POST"])
+@loginbp.route("/ll", methods=["GET","POST"])
 def login():
     from flask_cicd.apps.logins.models.users import User
     form = LoginForm()
@@ -43,7 +43,7 @@ def login():
     
     
     
-@loginbp.route('/signup', methods=['GET', 'POST'])
+@loginbp.route('/', methods=['GET', 'POST'])
 def signup():
     from run import db
     form = RegisterForm()
