@@ -13,13 +13,13 @@ from flask_cicd.apps.logins.controls import loginbp
 
 # Set App
 app = Flask(__name__)
-
+Bootstrap4(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///databases/db_flask_cicd.db'
 app.config['SECRET_KEY'] = "$HERBEWscKKwwqy#@!"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
 
 db = SQLAlchemy(app)
-bootstrap = Bootstrap4(app)
+#bootstrap = Bootstrap4(app)
 
 app.register_blueprint(homebp, url_prefix="/home")
 app.register_blueprint(loginbp, url_prefix="/login")
