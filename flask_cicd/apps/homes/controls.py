@@ -18,7 +18,7 @@ def home():
     return render_template('homes.html', name=current_user.username)
 
 @login_required
-@homebp.route("/logout")
+@homebp.route("/signout")
 def logout():
     logout_user()
     return redirect('/login')
