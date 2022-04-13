@@ -15,7 +15,9 @@ Flask-Migrate==3.1.0 #https://pypi.org/project/Flask-Migrate/
 ##Successfully installed Flask-Migrate-3.1.0 Mako-1.2.0 alembic-1.7.7 
 ##  importlib-resources-5.6.0
 
-Bootstrap-Flask==2.0.2 #https://pypi.org/project/Bootstrap-Flask/
+Flask-Bootstrap==3.3.7.1 #https://pypi.org/project/Flask-Bootstrap/
+
+#Bootstrap-Flask==2.0.2 #https://pypi.org/project/Bootstrap-Flask/
 ##Successfully installed Bootstrap-Flask-2.0.2 WTForms-3.0.1
 
 Flask-WTF==1.0.1 #https://pypi.org/project/Flask-WTF/
