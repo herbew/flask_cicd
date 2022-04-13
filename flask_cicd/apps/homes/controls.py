@@ -15,13 +15,9 @@ homebp = Blueprint(
 
 @homebp.route("/home")
 def home():
-    if "uname" in session:
-        uname = session["uname"]
-        phno  =  session["phno"]
-        emai  =  session["emai"]
-        return render_template('homes.html',uname=uname,phno=phno,emai=emai)
-    else:
-        return redirect('/login')
+    return render_template('homes.html', name=current_user.username)
+
+    
 
 @homebp.route("/logout")
 def logout():
