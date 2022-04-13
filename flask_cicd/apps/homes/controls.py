@@ -2,7 +2,7 @@
 from __future__ import absolute_import
 import os
 from flask import Blueprint, render_template, redirect, session
-from flask_login import logout_user, current_user
+from flask_login import logout_user, current_user, login_required
 
 
 homebp = Blueprint(
@@ -12,13 +12,12 @@ homebp = Blueprint(
     template_folder=os.path.join(os.path.dirname(__name__), '../../templates/homes')) #apps/homes/templates
 
 
-
+@login_required
 @homebp.route("/home")
 def home():
     return render_template('homes.html', name=current_user.username)
 
-    
-
+@login_required
 @homebp.route("/logout")
 def logout():
     logout_user()
