@@ -15,9 +15,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///databases/db_flask_cicd.db'
 app.config['SECRET_KEY'] = "$HERBEWscKKwwqy#@!"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
 
-manager = Manager(app)
-manager.add_command("shell", Shell(make_context=shell_context))
-
 db = SQLAlchemy(app)
 bootstrap = Bootstrap(app)
 
