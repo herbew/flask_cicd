@@ -3,6 +3,14 @@ from flask import Flask, render_template, request, flash, redirect, session
 from flask_sqlalchemy  import SQLAlchemy
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
+
+from flask_script import Manager, Command, Shell
+
+def shell_context():
+    import os, sys
+    return dict(app=app, os=os, sys=sys)
+
+manager.add_command("shell", Shell(make_context=shell_context))
                          
 from flask_cicd.apps.homes.controls import homebp
 from flask_cicd.apps.logins.controls import loginbp
