@@ -15,6 +15,7 @@ from flask_cicd.apps.logins.controls import loginbp
 app = Flask(__name__, template_folder="templates")
 
 Bootstrap4(app)
+Bootstrap4(loginbp)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///databases/db_flask_cicd.db'
 app.config['SECRET_KEY'] = "$HERBEWscKKwwqy#@!"

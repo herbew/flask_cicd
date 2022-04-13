@@ -19,7 +19,7 @@ loginbp = Blueprint(
          static_folder=os.path.join(os.path.dirname(__name__), '../../static'), #apps/homes/static
          template_folder=os.path.join(os.path.dirname(__name__), '../../templates/logins')) #apps/homes/templates
 
-Bootstrap4(loginbp)
+
 
 @loginbp.route("/", methods=["GET","POST"])
 def login():
