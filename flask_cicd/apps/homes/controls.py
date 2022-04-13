@@ -13,7 +13,7 @@ homebp = Blueprint(
 
 
 
-@homebp.route("/")
+@homebp.route("/home")
 def home():
     if "uname" in session:
         uname = session["uname"]
