@@ -22,8 +22,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
 
 db = SQLAlchemy(app)
 
-app.register_blueprint(homebp, url_prefix="/home")
-app.register_blueprint(loginbp, url_prefix="/login")
+app.register_blueprint(homebp)
+app.register_blueprint(loginbp)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
