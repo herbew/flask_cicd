@@ -4,7 +4,7 @@ from flask_sqlalchemy  import SQLAlchemy
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
 
-from flask_script import Manager, Command, Shell
+from flask_script import Manager,  Shell
 
 def shell_context():
     import os, sys
@@ -23,7 +23,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///databases/db_flask_cicd.db'
 app.config['SECRET_KEY'] = "$HERBEWscKKwwqy#@!"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
 
-app.add_command("shell", Shell(make_context=shell_context))
+manager = Manager(app)
+manager.add_command("shell", Shell(make_context=shell_context))
 
 db = SQLAlchemy(app)
 bootstrap = Bootstrap(app)
@@ -47,3 +48,4 @@ def main():
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5000, threaded=True)
+    manager.run()
