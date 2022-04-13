@@ -9,6 +9,7 @@ from flask_sqlalchemy  import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import (login_user, 
                          login_required, logout_user, current_user)
+from flask_bootstrap import Bootstrap4
 
 from flask_cicd.apps.logins.forms.users import LoginForm, RegisterForm
 
@@ -17,6 +18,8 @@ loginbp = Blueprint(
         __name__, 
          static_folder=os.path.join(os.path.dirname(__name__), '../../static'), #apps/homes/static
          template_folder=os.path.join(os.path.dirname(__name__), '../../templates/logins')) #apps/homes/templates
+
+Bootstrap4(loginbp)
 
 @loginbp.route("/", methods=["GET","POST"])
 def login():

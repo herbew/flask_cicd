@@ -4,7 +4,7 @@ from __future__ import absolute_import
 
 from flask import Flask, render_template, request, flash, redirect, session
 from flask_sqlalchemy  import SQLAlchemy
-from flask_bootstrap import Bootstrap, Bootstrap4
+from flask_bootstrap import Bootstrap4
 from flask_login import LoginManager
                          
 from flask_cicd.apps.homes.controls import homebp
@@ -14,14 +14,13 @@ from flask_cicd.apps.logins.controls import loginbp
 # Set App
 app = Flask(__name__, template_folder="templates")
 
-bootstrap = Bootstrap4(app)
+Bootstrap4(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///databases/db_flask_cicd.db'
 app.config['SECRET_KEY'] = "$HERBEWscKKwwqy#@!"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
 
 db = SQLAlchemy(app)
-
 
 app.register_blueprint(homebp, url_prefix="/home")
 app.register_blueprint(loginbp, url_prefix="/login")
