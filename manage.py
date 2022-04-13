@@ -1,5 +1,19 @@
-#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import
+
 from run import app
+
+"""
+ATTENTION PLEASE UPDATE IF ANY ERROR --
+../flask_cicd/envflask_cicd/lib/python3.8/site-packages/flask_script/__init__.py
+
+    ...
+    #from flask._compat import text_type
+    
+    from ._compat import iteritems, text_type
+    ...
+
+"""
 from flask_script import Manager, Command, Shell
 
 # The Flask-Script extension provides support for writing external scripts in

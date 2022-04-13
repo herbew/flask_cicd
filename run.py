@@ -1,4 +1,7 @@
 
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import
+
 from flask import Flask, render_template, request, flash, redirect, session
 from flask_sqlalchemy  import SQLAlchemy
 from flask_bootstrap import Bootstrap4
