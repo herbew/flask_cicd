@@ -10,9 +10,8 @@ from flask_cicd.apps.logins.forms.users import LoginForm, RegisterForm
 loginbp = Blueprint(
         "loginbp", 
         __name__, 
-        static_folder="static", 
-        template_folder="templates"
-        )
+        static_folder="../../static", #apps/homes/static
+        template_folder="../../templates") #apps/homes/templates
 
 @loginbp.route("/", methods=["GET","POST"])
 def login():
