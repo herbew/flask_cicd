@@ -45,7 +45,9 @@ def login():
     
 @loginbp.route('/signup', methods=['GET', 'POST'])
 def signup():
+    from flask_cicd.apps.logins.models.users import User
     from run import db
+    
     form = RegisterForm()
 
     if form.validate_on_submit():
