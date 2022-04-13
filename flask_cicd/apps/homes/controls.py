@@ -9,7 +9,7 @@ homebp = Blueprint(
     "homebp",
     __name__, 
     static_folder=os.path.join(os.path.dirname(__name__), '../../static'), #apps/homes/static
-    template_folder=os.path.join(os.path.dirname(__name__), '../../templates')) #apps/homes/templates
+    template_folder=os.path.join(os.path.dirname(__name__), '../../templates/homes')) #apps/homes/templates
 
 
 
