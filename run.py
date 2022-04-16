@@ -8,6 +8,7 @@ from flask import Flask, render_template, request, flash, redirect, session
 from flask_sqlalchemy  import SQLAlchemy
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
+
                          
 from flask_cicd.apps.homes.controls import homebp
 from flask_cicd.apps.logins.controls import loginbp
@@ -47,7 +48,7 @@ def load_user(user_id):
 
 @app.route("/")
 def main():
-    return redirect('/login')
+    return redirect('/users/list')
 
 
 if __name__ == "__main__":
