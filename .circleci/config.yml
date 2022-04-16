@@ -23,4 +23,4 @@ jobs:
             python3 pytest
       - store_artifacts:
           path: flask_cicd/apps/tests/
-          destination: run.py
+          destination: flask_cicd
